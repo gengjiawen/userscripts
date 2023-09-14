@@ -9,9 +9,10 @@
 // @grant        none
 // ==/UserScript==
 
-(function () {
-  Array.from(document.body.getElementsByTagName("a"))
-    .filter((i) => i.getAttribute("href").startsWith("ed2k"))
-    .map((i) => i.getAttribute("href"))
-    .map((i) => console.log(i));
-})();
+;(function () {
+  let ed2ks = Array.from(document.body.getElementsByTagName('a'))
+    .filter((i) => i.getAttribute('href')?.startsWith('ed2k'))
+    .map((i) => i.getAttribute('href'))
+    .join('\n')
+  console.log(ed2ks)
+})()
